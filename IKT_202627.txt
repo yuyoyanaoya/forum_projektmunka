@@ -1,0 +1,41 @@
+*****************************************
+Projektmunka - Forum
+*****************************************
+
+ - Kategóriákra/témákra osztva:
+	- azokon belül kategóriák
+
+ - Fiók:
+	- profilkép
+	- név
+	- leírás
+
+ - Funkciók:
+	- bejegyzés készítés
+	- kép posztolás
+	- bejegyzések like/dislike-olása (opcionális)
+	- dashboard (főoldal), új/felkapott posztok kiválasztása (opcionális)
+	- friend request
+
+-----------------------------------------------------------------------------------
+
+****************************************
+Feladatok
+****************************************
+
+- dokumentáció
+- adatbázis - Csanád
+- főoldal megtervezése - Csanád
+- főoldal kivitelezése - Laci
+- kategóriák létrehozása - Laci
+- témákra bontás - Csanád
+- üzenőfal megtervezése - Csanád
+- üzenőfal kivitelezése - Laci
+- profil oldal - Csanád
+- beállítások oldal - Laci
+- üzenet/kép posztolás/hozzáadás - Laci
+- barát hozzáadás - Csanád
+- fiók létrehozás - Laci
+- nickname létrehozás - Laci
+- profilkép hozzáadás - Csanád
+- forumszabályzat elkészítése - Csanád
