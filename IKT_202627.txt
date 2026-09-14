@@ -1,0 +1,68 @@
+*****************************************
+Projektmunka - Forum
+*****************************************
+
+ - Kategóriákra/témákra osztva:
+	- azokon belül kategóriák
+
+ - Fiók:
+	- profilkép
+	- név
+	- leírás
+
+ - Funkciók:
+	- bejegyzés készítés
+	- kép posztolás
+	- bejegyzések like/dislike-olása (opcionális)
+	- dashboard (főoldal), új/felkapott posztok kiválasztása (opcionális)
+	- friend request
+
+-----------------------------------------------------------------------------------
+
+****************************************
+Feladatok
+****************************************
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
