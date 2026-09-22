@@ -134,7 +134,7 @@
             <tr><td><hr></td></tr>
             <tr>
                 <th class="kategoriakTablaElem"><h2 class="felsoSor">Zene</h2></th>
-                <t class="kategoriakTablaElem"h><h2 class="felsoSor">Tech</h2></t>
+                <th class="kategoriakTablaElem"><h2 class="felsoSor">Tech</h2></th>
                 <th class="kategoriakTablaElem"><h2 class="felsoSor">Gasztronómia</h2></th>
             </tr>
             <tr>
