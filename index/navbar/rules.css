@@ -1,0 +1,126 @@
+body {
+        background-image: url("../../assets/mainBackground.jpg");
+        background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+    margin-bottom: 20px;
+    display: flex;
+    }
+
+    a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: rgb(236, 236, 236);
+    }
+
+    td {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    #titleDIV {
+        font-family: DM Serif Display;
+        text-align: center;
+        padding-bottom: 50px;
+        color: white;
+        float: left;
+    }
+
+    #title {
+        font-size: 120px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-top: 10px;
+        padding-top: 10;
+    }
+
+    #subtitle {
+        text-decoration: none;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    hr {
+        width: 310%;
+    }
+
+    #clockDIV {
+        margin-left: auto;
+        margin-right: auto;
+        height: 40px;
+        width: 120px;
+        background-color: rgba(255, 255, 255, 0.20);
+        border-radius: 25px;
+        text-align: center;
+        font-size: 28px;
+        color: white;
+        font-family: DM Serif Display;
+    }
+
+    #navbar {
+        text-align: justify;
+        border: 1px black solid;
+        width: 1257px;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: rgba(51, 51, 51, 0.456);
+        margin-bottom: 10px;
+        color: white;
+        font-family: Habibi;
+        border-radius: 25px;
+    }
+
+    .navbarLINK {
+        width:209px;
+        text-align: center;
+    }
+
+    #balraClock {
+        float: left;
+        width: 120px;
+        display:flex;
+        padding-left: 105px;
+    }
+
+    #balDIV {
+        display:flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width:330px;
+        height: 1000px;
+    }
+
+    #szabalyok {
+        float:right;
+        width:1480px;
+        height:1000px;
+        background-color: rgba(51, 51, 51, 0.496);
+        border-radius: 25px;
+        border: 1px black solid;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 25px;
+        color: white;
+    }
+
+    #szabalyTitle {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-top: 10px;
+        padding-top: 10px;
+        font-family: DM Serif Display;
+        color: white;
+    }
