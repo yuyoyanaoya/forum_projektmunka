@@ -1,0 +1,99 @@
+body {
+        background-image: url("mainBackground.jpg");
+        background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    }
+
+    .kategoriakTablaElem {
+        width:409px;
+        height: fit-content;
+        font-family: Habibi;
+        color: white;
+    }
+
+    a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: rgb(236, 236, 236);
+    }
+
+    td {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+
+    #kategoriak table:display table{
+        text-align: justify;
+        border: 1px black solid;
+        width: 1257px;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: rgba(51, 51, 51, 0.456);
+    }
+
+    #titleDIV {
+        font-family: DM Serif Display;
+        text-align: center;
+        padding-bottom: 50px;
+        color: white;
+    }
+
+    #title {
+        font-size: 120px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    #subtitle {
+        text-decoration: none;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .felsoSor {
+        margin-top: 0;
+    }
+
+    hr {
+        width: 310%;
+    }
+
+    #clockDIV {
+        margin-left: auto;
+        margin-right: auto;
+        height: 30px;
+        width: 110px;
+        background-color: rgba(255, 255, 255, 0.20);
+        border: ridge 3px rgba(255, 255, 255, 0.75);
+        text-align: center;
+        font-size: 28px;
+        color: white;
+    }
+
+    #navbar {
+        text-align: justify;
+        border: 1px black solid;
+        width: 1257px;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: rgba(51, 51, 51, 0.456);
+    }
+
+    .zene {
+        color:white;
+    }
