@@ -33,25 +33,7 @@
     <div id="szabalyok">
         <h1 id="szabalyTitle">Squall fórumszabályzat és általános tudnivalók</h1>
 
-        <p>軋んだ想いを吐き出したいのは存在の証明 が他にないから 掴んだはずの僕の未来は「尊厳」と「自由」で矛盾してるよ 歪んだ残像を消し去りたいのは自分の限界をそこに見るから 自意識過剰な僕の窓には去年のカレンダー日付けがないよ<br>
 
-<h1 id="szabalyTitle">消してリライトして くだらない超幻想 忘られぬ存在感を</h1>
-起死回生 リライトして 意味のない想像も君を成す原動力 全身全霊をくれよ<br> 芽生えてた感情切って泣いて 所詮ただ凡席知って泣いて
-
-<h1 id="szabalyTitle">Kiste, riraotoste kudaranaicsogensó</h1>
-
-
-<br>
-腐った心 を<br>
-薄汚 い嘘を<br>
-消してリライトして<br>
-くだらない超幻想<br>
-忘られぬ存在感を<br>
-<br>
-起死回生<br>
-リライトして<br>
-意味のない想像も君を成す原動力<br>
-全身全霊をくれよ</p>
     </div>
 
     <!--<div id="navbar">
