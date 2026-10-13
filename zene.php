@@ -1,10 +1,35 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "forumprojekt";
+
+$conn = new mysqli("localhost", "root", "", "forumprojekt");
+
+if ($conn->connect_error) {
+die("DB hiba: " . $conn->connect_error);
+}
+
+if (isset($_POST['save_category'])) {
+    $katID = $_POST['katID'] ?? '';
+    $katNev = $_POST['katNev'] ?? '';
+    $katLeiras = $_POST['katLeiras'] ?? '';
+
+    $stmt = $pdo->prepare("INSERT INTO kategoriak (katID, katNev, katLeiras) VALUES (?, ?, ?)");
+    $stmt->execute([$katID, $katNev, $katLeiras]);
+
+    header("Location: zene.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squall: Lurk more - it's never enough</title>
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="zene.css">
     <link rel="icon" href="../assets/icon2.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +71,7 @@
 
     <div class="topic-list-header">
       <div class="header-left">
-        <a href="#" class="btn-back">Vissza</a>
+        <a href="index/index.php" class="btn-back">Vissza</a>
         <h2 class="topic-title">Zene témakör</h2>
       </div>
       <button class="btn-new-topic" onclick="alert('Új téma létrehozása ablak')">+ Új téma nyitása</button>
