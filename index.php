@@ -1,5 +1,3 @@
-<?php include "../database/connect.php"; ?>
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -26,8 +24,22 @@
     <div id="titleDIV">
         <p id="title">Squall</p>
         <h2 id="subtitle">Lurk more - <i>it's never enough</i></h2>
-        <button class="accountBtn"><a href="account/login.php">Bejelentkezés</a></button>
-        <button class="accountBtn"><a href="account/register.php">Regisztráció</a></button>
+        <button type="submit" class="accountBtn" onclick="loginMutat()">Bejelentkezés</a></button>
+        <button type="submit" class="accountBtn" onclick="regMutat()">Regisztráció</a></button>
+    </div>
+
+    <div class="account" id="accountLogin">
+        <h2>Bejelentkezés</h2><br>
+        <input class="beirMezo" type="text" placeholder="E-mail cím" onclick="login()"><br>
+        <input class="beirMezo" type="text" placeholder="Jelszó">
+        <input class="submitMezo" type="submit" value="Bejelentkezés">
+    </div>
+
+    <div class="account" id="accountRegister">
+        <h2>Regisztráció</h2><br>
+        <input class="beirMezo" type="text" placeholder="E-mail cím"><br>
+        <input class="beirMezo" type="text" placeholder="Jelszó">
+        <input class="submitMezo" type="submit" value="Regisztráció">
     </div>
 
     <div id="navbar">
@@ -46,7 +58,7 @@
     <div id="kategoriak">
         <table>
             <tr>
-                <th class="kategoriakTablaElem"><h2 class="felsoSor"><a href="../zene.php">Zene</a></h2></th>
+                <th class="kategoriakTablaElem"><h2 class="felsoSor">Zene</h2></th>
                 <th class="kategoriakTablaElem"><h2 class="felsoSor">Tech</h2></th>
                 <th class="kategoriakTablaElem"><h2 class="felsoSor">Gasztronómia</h2></th>
             </tr>
