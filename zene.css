@@ -1,7 +1,7 @@
 body {
         background-image: url("../forum_projektmunka-main/assets/mainBackground.jpg");
         background-repeat: no-repeat;
-	background-size: cover;
+	background-size:auto;
 	background-position: center;
     margin-bottom: 20px;
     }
@@ -45,7 +45,7 @@ body {
     #titleDIV {
         font-family: DM Serif Display;
         text-align: center;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
         color: white;
     }
 
@@ -105,6 +105,54 @@ body {
         width:209px;
         text-align: center;
     }
+
+    #postCreate {
+        text-align: justify;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        font-family: Habibi;
+        border-radius: 25px;
+        width:300px;
+        height:200px; 
+    }
+
+    #postGomb {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: Habibi;
+        background-color: rgba(255, 255, 255, 0.20);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        width: 150px;
+        height:30px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15px;
+    }
+
+    .accountTH {
+        height: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .accountTR {
+        margin-top:3px;
+
+    }
+
+    .accountH3 {
+        margin-top:5px;
+        margin-bottom: 5px;
+        width: 150px;
+        text-align: right;
+    }
+
+    
+
 
 /* Fő tároló panel */
 .main-forum-container {

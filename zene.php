@@ -16,7 +16,7 @@ if (isset($_POST['save_category'])) {
     $katNev = $_POST['katNev'] ?? '';
     $katLeiras = $_POST['katLeiras'] ?? '';
 
-    $stmt = $pdo->prepare("INSERT INTO kategoriak (katID, katNev, katLeiras) VALUES (?, ?, ?)");
+    $stmt = $conn -> prepare("INSERT INTO kategoriak (katID, katNev, katLeiras) VALUES (?, ?, ?)");
     $stmt->execute([$katID, $katNev, $katLeiras]);
 
     header("Location: zene.php");
@@ -31,7 +31,7 @@ if (isset($_POST['save_category'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squall: Lurk more - it's never enough</title>
     <link rel="stylesheet" href="zene.css">
-    <link rel="icon" href="../assets/icon2.ico">
+    <link rel="icon" href="assets/icon2.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Imbue:opsz,wght@10..100,100..900&display=swap" rel="stylesheet">
@@ -42,10 +42,10 @@ if (isset($_POST['save_category'])) {
 </head>
 <body>
 
-  <script src="index.js" defer></script>
+  <script src="index/index.js" defer></script>
   <script src="newtopic.js" defer></script>
 
-<body onload="idoMutat()">
+<body onload="idoMutat()" defer>
     <div id="clockDIV"></div>
 
     
@@ -54,7 +54,7 @@ if (isset($_POST['save_category'])) {
         <h2 id="subtitle">Lurk more - <i>it's never enough</i></h2>
     </div>
 
-    <div id="navbar">
+    <!--<div id="navbar">
         <table>
             <tr>
                 <th class="navbarLINK"><a href="#">Hirohito</a></th>
@@ -65,16 +65,16 @@ if (isset($_POST['save_category'])) {
                 <th class="navbarLINK"><a href="#">Sit</a></th>
             </tr>
         </table>
-    </div>
+    </div>-->
 
-  <main class="main-forum-container">
+  <!--<main class="main-forum-container">
 
     <div class="topic-list-header">
       <div class="header-left">
         <a href="index/index.php" class="btn-back">Vissza</a>
         <h2 class="topic-title">Zene témakör</h2>
       </div>
-      <button class="btn-new-topic" onclick="alert('Új téma létrehozása ablak')">+ Új téma nyitása</button>
+      <button class="btn-new-topic")>+ Új téma nyitása</button>
     </div>
 
     <div class="topics-stack">
@@ -96,7 +96,26 @@ if (isset($_POST['save_category'])) {
           </div>
         </div>
       </a>
-  </main>
+  </main>-->
+
+  <center><a href="#"><button id="postGomb" onclick="postMutat()">Poszt létrehozása</button></a></center>
+  <div id="postCreate">
+     
+    <form>
+      <table>
+        <tr class="accountTR">
+          <th class="accountTH"><input type="text" placeholder="Poszt címe"></th>
+        </tr>
+        <tr class="accountTR">
+          <th class="accountTH"><input type="text" placeholder="Felhasználónév"></th>
+        </tr>
+        <tr class="accountTR">
+          <th class="accountTH" id="postUzenet"><textarea id="accountUzenet" value:="Üzenet . . . "></textarea></th>
+        </tr>
+     </table>
+     </form>
+
+  </div>
 
 <div class="modal-backdrop" id="newTopicModal">
   <div class="modal-content">
