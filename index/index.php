@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,22 @@
     <div id="titleDIV">
         <p id="title">Squall</p>
         <h2 id="subtitle">Lurk more - <i>it's never enough</i></h2>
+        <button type="submit" class="accountBtn" onclick="loginMutat()">Bejelentkezés</a></button>
+        <button type="submit" class="accountBtn" onclick="regMutat()">Regisztráció</a></button>
+    </div>
+
+    <div class="account" id="accountLogin">
+        <h2>Bejelentkezés</h2><br>
+        <input class="beirMezo" type="text" placeholder="E-mail cím" onclick="login()"><br>
+        <input class="beirMezo" type="text" placeholder="Jelszó">
+        <input class="submitMezo" type="submit" value="Bejelentkezés">
+    </div>
+
+    <div class="account" id="accountRegister">
+        <h2>Regisztráció</h2><br>
+        <input class="beirMezo" type="text" placeholder="E-mail cím"><br>
+        <input class="beirMezo" type="text" placeholder="Jelszó">
+        <input class="submitMezo" type="submit" value="Regisztráció">
     </div>
 
     <div id="navbar">

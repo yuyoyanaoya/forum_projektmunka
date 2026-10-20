@@ -1,7 +1,7 @@
 body {
-        background-image: url("../assets/mainBackground.jpg");
-        background-repeat: no-repeat;
-	background-size: cover;
+    background-image: url("../assets/mainBackground.jpg");
+    background-repeat: no-repeat;
+	background-size: fixed;
 	background-position: center;
     margin-bottom: 20px;
     }
@@ -13,7 +13,7 @@ body {
         color: white;
     }
 
-    a:link, a:visited, a:hover, a:active {
+    a:link, a:visited, a:active {
         text-decoration: none;
         color: white;
     }
@@ -104,4 +104,68 @@ body {
     .navbarLINK {
         width:209px;
         text-align: center;
+    }
+
+    .accountBtn {
+        padding-left: 35px;
+        padding-right: 35px;
+        font-family: Habibi;
+        background-color: rgba(255, 255, 255, 0.20);
+        border: none;
+        border-radius: 25px;
+        color: white;
+    }
+
+    #accountLogin{
+        text-align: center;
+        border: 1px black solid;
+        width: 270px;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: rgba(51, 51, 51, 0.456);
+        margin-bottom: 10px;
+        color: white;
+        font-family: Habibi;
+        border-radius: 25px;
+        margin-bottom: 20px;
+    }
+
+    #accountRegister{
+        text-align: center;
+        border: 1px black solid;
+        width: 270px;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: rgba(51, 51, 51, 0.456);
+        margin-bottom: 10px;
+        color: white;
+        font-family: Habibi;
+        border-radius: 25px;
+        margin-bottom: 20px;
+    }
+
+    .beirMezo{
+        border-radius: 5px;
+        border: 1px black solid;
+        font-family: Habibi;
+        background-color: rgba(51, 51, 51, 0.456);
+        padding-left: 5px;
+        width: 250px;
+        color: white;
+    }
+
+    .submitMezo{
+        border-radius: 5px;
+        border: 1px black solid;
+        font-family: Habibi;
+        background-color: rgba(100, 100, 100, 0.456);
+        padding-left: 5px;
+        width: 120px;
+        color:white;
+        margin-top: 20px;
+        height: 30px;
     }
