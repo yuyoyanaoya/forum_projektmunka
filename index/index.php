@@ -1,3 +1,76 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "forumprojekt";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Hiba a kapcsolódáskor: " . $conn->connect_error);
+}
+$success = "";
+$error = "";
+
+if($_SERVER["REQUEST_METHOD"]==="POST"){ 
+    $action=$_POST["action"] ?? ""; 
+    if($action==="register"){
+        $email=trim($_POST["email"] ?? ""); $jelszo=trim($_POST["jelszo"] ?? "");
+        if($email==="" || $jelszo===""){ 
+            $error="Minden mezőt ki kell tölteni.";
+        }else{
+            $hash=password_hash($jelszo,PASSWORD_DEFAULT); 
+            $stmt=$conn->prepare("INSERT INTO felhasznalo(jelszo, email) VALUES(?,?)"); 
+            if($stmt){ $stmt->bind_param("ss",$hash, $email); 
+            if($stmt->execute()){ 
+                $success="Sikeres regisztráció!"; 
+            }else{ 
+                $error="Hiba a regisztrációnál."; 
+            } 
+            $stmt->close(); } } } if($action==="login"){ $email=trim($_POST["emaillog"] ?? ""); 
+            $jelszo=$_POST["jelszolog"] ?? ""; 
+            if($email==="" || $jelszo===""){ 
+                $error="Add meg az emailt és a jelszót.";
+            }else{ 
+                $stmt=$conn->prepare("SELECT jelszo, email FROM felhasznalo WHERE email=?"); 
+                if($stmt){ $stmt->bind_param("s",$email); 
+                $stmt->execute(); $stmt->store_result(); 
+                if($stmt->num_rows===1){ 
+                    $stmt->bind_result($hash, $email); 
+                    $stmt->fetch(); 
+                    if(password_verify($jelszo, $hash)){ 
+                        session_regenerate_id(true); 
+                        $_SESSION["user_id"]=$userID; 
+                        $_SESSION["user_name"]=$username;
+                        $_SESSION["user_displayname"]=$displayName;
+                        $_SESSION["user_password"]=$jelszo; 
+                        $_SESSION["user_email"]=$email;
+                        $_SESSION["user_keresztnev"]=$keresztnev;
+                        $_SESSION["user_vezeteknev"]=$vezeteknev;
+                        $_SESSION["user_datum"]=$szuletesiDatum;
+                        $_SESSION["user_orszag"]=$orszag;
+                        if($username=="admin"){
+                            header("Location: index_admin.php"); 
+                        }
+                        else{ 
+                            header("Location: index.php"); 
+                        } exit; 
+                    }
+                    else{
+                         $error="Hibás email vagy jelszó.";
+                    } 
+                }else{ 
+                    $error="Hibás email vagy jelszó."; 
+                } 
+                $stmt->close(); 
+            } 
+        }
+    }
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -18,28 +91,44 @@
 <script src="index.js" defer></script>
 
 <body onload="idoMutat()">
+
+<?php if ($success): ?>
+    <div class="msg success"><?= $success ?></div>
+<?php endif; ?>
+
+<?php if ($error): ?>
+    <div class="msg error"><?= $error ?></div>
+<?php endif; ?>
+
     <div id="clockDIV"></div>
 
     
     <div id="titleDIV">
         <p id="title">Squall</p>
         <h2 id="subtitle">Lurk more - <i>it's never enough</i></h2>
-        <button type="submit" class="accountBtn" onclick="loginMutat()">Bejelentkezés</a></button>
-        <button type="submit" class="accountBtn" onclick="regMutat()">Regisztráció</a></button>
+        <button type="submit" class="accountBtn" onclick="loginMutat()">Bejelentkezés</button>
+        <button type="submit" class="accountBtn" onclick="regMutat()">Regisztráció</button>
     </div>
 
+    
     <div class="account" id="accountLogin">
         <h2>Bejelentkezés</h2><br>
-        <input class="beirMezo" type="text" placeholder="E-mail cím" onclick="login()"><br>
-        <input class="beirMezo" type="text" placeholder="Jelszó">
-        <input class="submitMezo" type="submit" value="Bejelentkezés">
+        <form method="post" id="input">
+            <input type="hidden" name="action" value="login">
+            <input class="input_text" type="email" placeholder="Email: " name="emaillog" required></br>
+            <input class="input_text" type="password" placeholder="Jelszo: " name="jelszolog" required></br>
+            <input class="submit_gomb" type="submit" value="Bejelentkezés">
+        </form>
     </div>
 
     <div class="account" id="accountRegister">
         <h2>Regisztráció</h2><br>
-        <input class="beirMezo" type="text" placeholder="E-mail cím"><br>
-        <input class="beirMezo" type="text" placeholder="Jelszó">
-        <input class="submitMezo" type="submit" value="Regisztráció">
+        <form method="post" id="input">
+            <input type="hidden" name="action" value="register">
+            <input class="input_text" type="email" placeholder="Email: " name="email" required></br>
+            <input class="input_text" type="password" placeholder="Jelszo: " name="jelszo" required></br>
+            <input class="submit_gomb" type="submit" value="Regisztráció">
+        </form>
     </div>
 
     <div id="navbar">
@@ -186,5 +275,9 @@
             </tr>
         </table>
     </div>
+
+<?php
+$conn->close();
+?>
 </body>
 </html>
