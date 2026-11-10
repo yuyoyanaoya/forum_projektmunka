@@ -14,61 +14,61 @@ if ($conn->connect_error) {
 $success = "";
 $error = "";
 
-if($_SERVER["REQUEST_METHOD"]==="POST"){ 
-    $action=$_POST["action"] ?? ""; 
-    if($action==="register"){
-        $email=trim($_POST["email"] ?? ""); $jelszo=trim($_POST["jelszo"] ?? "");
-        if($email==="" || $jelszo===""){ 
-            $error="Minden mezőt ki kell tölteni.";
-        }else{
-            $hash=password_hash($jelszo,PASSWORD_DEFAULT); 
-            $stmt=$conn->prepare("INSERT INTO felhasznalo(jelszo, email) VALUES(?,?)"); 
-            if($stmt){ $stmt->bind_param("ss",$hash, $email); 
-            if($stmt->execute()){ 
-                $success="Sikeres regisztráció!"; 
-            }else{ 
-                $error="Hiba a regisztrációnál."; 
-            } 
-            $stmt->close(); } } } if($action==="login"){ $email=trim($_POST["emaillog"] ?? ""); 
-            $jelszo=$_POST["jelszolog"] ?? ""; 
-            if($email==="" || $jelszo===""){ 
-                $error="Add meg az emailt és a jelszót.";
-            }else{ 
-                $stmt=$conn->prepare("SELECT jelszo, email FROM felhasznalo WHERE email=?"); 
-                if($stmt){ $stmt->bind_param("s",$email); 
-                $stmt->execute(); $stmt->store_result(); 
-                if($stmt->num_rows===1){ 
-                    $stmt->bind_result($hash, $email); 
-                    $stmt->fetch(); 
-                    if(password_verify($jelszo, $hash)){ 
-                        session_regenerate_id(true); 
-                        $_SESSION["user_id"]=$userID; 
-                        $_SESSION["user_name"]=$username;
-                        $_SESSION["user_displayname"]=$displayName;
-                        $_SESSION["user_password"]=$jelszo; 
-                        $_SESSION["user_email"]=$email;
-                        $_SESSION["user_keresztnev"]=$keresztnev;
-                        $_SESSION["user_vezeteknev"]=$vezeteknev;
-                        $_SESSION["user_datum"]=$szuletesiDatum;
-                        $_SESSION["user_orszag"]=$orszag;
-                        if($username=="admin"){
-                            header("Location: index_admin.php"); 
-                        }
-                        else{ 
-                            header("Location: index.php"); 
-                        } exit; 
-                    }
-                    else{
-                         $error="Hibás email vagy jelszó.";
-                    } 
-                }else{ 
-                    $error="Hibás email vagy jelszó."; 
-                } 
-                $stmt->close(); 
-            } 
-        }
-    }
-} 
+// if($_SERVER["REQUEST_METHOD"]==="POST"){ 
+//     $action=$_POST["action"] ?? ""; 
+//     if($action==="register"){
+//         $email=trim($_POST["email"] ?? ""); $jelszo=trim($_POST["jelszo"] ?? "");
+//         if($email==="" || $jelszo===""){ 
+//             $error="Minden mezőt ki kell tölteni.";
+//         }else{
+//             $hash=password_hash($jelszo,PASSWORD_DEFAULT); 
+//             $stmt=$conn->prepare("INSERT INTO felhasznalo(jelszo, email) VALUES(?,?)"); 
+//             if($stmt){ $stmt->bind_param("ss",$hash, $email); 
+//             if($stmt->execute()){ 
+//                 $success="Sikeres regisztráció!"; 
+//             }else{ 
+//                 $error="Hiba a regisztrációnál."; 
+//             } 
+//             $stmt->close(); } } } if($action==="login"){ $email=trim($_POST["emaillog"] ?? ""); 
+//             $jelszo=$_POST["jelszolog"] ?? ""; 
+//             if($email==="" || $jelszo===""){ 
+//                 $error="Add meg az emailt és a jelszót.";
+//             }else{ 
+//                 $stmt=$conn->prepare("SELECT jelszo, email FROM felhasznalo WHERE email=?"); 
+//                 if($stmt){ $stmt->bind_param("s",$email); 
+//                 $stmt->execute(); $stmt->store_result(); 
+//                 if($stmt->num_rows===1){ 
+//                     $stmt->bind_result($hash, $email); 
+//                     $stmt->fetch(); 
+//                     if(password_verify($jelszo, $hash)){ 
+//                         session_regenerate_id(true); 
+//                         $_SESSION["user_id"]=$userID; 
+//                         $_SESSION["user_name"]=$username;
+//                         $_SESSION["user_displayname"]=$displayName;
+//                         $_SESSION["user_password"]=$jelszo; 
+//                         $_SESSION["user_email"]=$email;
+//                         $_SESSION["user_keresztnev"]=$keresztnev;
+//                         $_SESSION["user_vezeteknev"]=$vezeteknev;
+//                         $_SESSION["user_datum"]=$szuletesiDatum;
+//                         $_SESSION["user_orszag"]=$orszag;
+//                         if($username=="admin"){
+//                             header("Location: index_admin.php"); 
+//                         }
+//                         else{ 
+//                             header("Location: index.php"); 
+//                         } exit; 
+//                     }
+//                     else{
+//                          $error="Hibás email vagy jelszó.";
+//                     } 
+//                 }else{ 
+//                     $error="Hibás email vagy jelszó."; 
+//                 } 
+//                 $stmt->close(); 
+//             } 
+//         }
+//     }
+// } 
 ?>
 
 <!DOCTYPE html>
@@ -147,7 +147,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
     <div id="kategoriak">
         <table>
             <tr>
-                <th class="kategoriakTablaElem"><h2 class="felsoSor">Zene</h2></th>
+                <th class="kategoriakTablaElem"><h2 class="felsoSor"><a href="../category.php">Zene</a></h2></th>
                 <th class="kategoriakTablaElem"><h2 class="felsoSor">Tech</h2></th>
                 <th class="kategoriakTablaElem"><h2 class="felsoSor">Gasztronómia</h2></th>
             </tr>
