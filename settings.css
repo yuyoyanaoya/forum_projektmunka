@@ -1,0 +1,20 @@
+.menu {
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--muted-text);
+  height: 518px;
+  width: 1818px;
+  box-shadow: 3px 3px 3px 3px rgba(255, 255, 255, 0.155);
+}
+
+.menu2 {
+  border: 1.5px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  background-color: var(--bg-color);
+  box-shadow: 3px 3px 3px 3px rgba(255, 255, 255, 0.155);
+  width: 580px;
+  height: 500px;
+  float: left;
+  margin-right: 20px;
+}
