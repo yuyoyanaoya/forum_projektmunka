@@ -12,18 +12,19 @@ die("DB hiba: " . $conn->connect_error);
 }
 
 $result = $conn->query(
-"SELECT imageName FROM uzenetek ORDER BY uzenetID DESC"
+"SELECT imageName, nickName FROM uzenetek ORDER BY uzenetID DESC"
 );
 
 if (isset($_POST['save_message'])) {
     $imageName = trim($_POST['imageName'] ?? '');
+    $nickName = trim($_POST['save_nickname'] ?? '');
 
-    if ($imageName !== '') {
+    if ($nickName !== '' && $imageName !== '') {
         $stmt = $conn->prepare(
-            "INSERT INTO uzenetek (imageName) VALUES (?)"
+            "INSERT INTO uzenetek (nickName, imageName) VALUES (?, ?)"
         );
 
-        $stmt->bind_param("s", $imageName);
+        $stmt->bind_param("ss", $nickName, $imageName);
         $stmt->execute();
         $stmt->close();
     }
@@ -84,24 +85,35 @@ if (isset($_POST['save_message'])) {
         <h2 class="topic-title">Deconstructed Club és Dark Ambient felfedezések</h2>
       </div>
     </div>
-
-    <div class="topics-stack">
-      <div href="#" class="topic-card">
-        <div class="topic-main-info">
-            <p class="topic-excerpt">Ebben a topicban gyűjtsük össze a leghangulatosabb borongós, esős délutánokhoz illő ambient és deconstructe...</p>
-            <div class="messages-list">
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <div class="message">
-                        <p><?= nl2br(htmlspecialchars($row['imageName'], ENT_QUOTES, 'UTF-8')) ?></p>
+    <div class="column">
+        <div class="topics-stack">
+            <div href="#" class="topic-card">
+                <div class="topic-main-info">
+                    <p class="topic-excerpt">Ebben a topicban gyűjtsük össze a leghangulatosabb borongós, esős délutánokhoz illő ambient és deconstructe...</p>
+                    <div class="messages-list">
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <div class="message">
+                                <p> <?=htmlspecialchars($row['nickName'], ENT_QUOTES, 'UTF-8') ?>:
+                                    <?= nl2br(htmlspecialchars($row['imageName'], ENT_QUOTES, 'UTF-8')) ?></p>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                <?php endwhile; ?>
+                </div>
             </div>
-            <form method="POST" action="">
-                <textarea name="imageName" placeholder="Írd meg az üzeneted..." rows="4" required></textarea>
-                <button type="submit" name="save_message">Közzététel</button>
-            </form>
+        </div>    
+        <div class="topics-stack2">
+            <div href="#" class="topic-card">
+                <div class="topic-main-info">
+                    <form method="POST" action="">
+                        <input type="text" name="save_nickname" placeholder="Írj be egy nickname-t...">
+                        <textarea name="imageName" placeholder="Írd meg az üzeneted..." rows="4" required></textarea>
+                        <button type="submit" name="save_message">Közzététel</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+    
   </main>
     
 </body>

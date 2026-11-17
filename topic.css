@@ -1,127 +1,139 @@
 body {
-        background-image: url("../forum_projektmunka-main/assets/mainBackground.jpg");
-        background-repeat: no-repeat;
+    background-image: url("../forum_projektmunka-main/assets/mainBackground.jpg");
+    background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
     margin-bottom: 20px;
-    }
+}
 
-    .kategoriakTablaElem {
-        width:409px;
-        height: fit-content;
-        font-family: Habibi;
-        color: white;
-    }
+.kategoriakTablaElem {
+    width:409px;
+    height: fit-content;
+    font-family: Habibi;
+    color: white;
+}
 
-    a:link, a:visited, a:hover, a:active {
-        text-decoration: none;
-        color: white;
-    }
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
 
-    a:hover {
-        text-decoration: underline;
-        color: rgb(236, 236, 236);
-    }
+a:hover {
+    text-decoration: underline;
+    color: rgb(236, 236, 236);
+}
 
-    td {
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-left: 10px;
-    }
+td {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
 
 
-    #kategoriak {
-        text-align: justify;
-        border: 1px black solid;
-        width: 1257px;
-        height: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 20px;
-        background-color: rgba(51, 51, 51, 0.496);
-        border-radius: 25px;
-    }
+#kategoriak {
+    text-align: justify;
+    border: 1px black solid;
+    width: 1257px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.496);
+    border-radius: 25px;
+}
 
-    #titleDIV {
-        font-family: DM Serif Display;
-        text-align: center;
-        padding-bottom: 50px;
-        color: white;
-    }
+#titleDIV {
+    font-family: DM Serif Display;
+    text-align: center;
+    padding-bottom: 50px;
+    color: white;
+}
 
-    #title {
-        font-size: 120px;
-        margin-bottom: 0;
-        padding-bottom: 0;
-        margin-top: 10px;
-        padding-top: 10px;
-    }
+#title {
+    font-size: 120px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+    padding-top: 10px;
+}
 
-    #subtitle {
-        text-decoration: none;
-    }
+#subtitle {
+    text-decoration: none;
+}
 
-    h2 {
-        margin: 0;
-    }
+h2 {
+    margin: 0;
+}
 
-    .felsoSor {
-        margin-top: 0;
-    }
+.felsoSor {
+    margin-top: 0;
+}
 
-    hr {
-        width: 310%;
-    }
+hr {
+    width: 310%;
+}
 
-    #clockDIV {
-        margin-left: auto;
-        margin-right: auto;
-        height: 40px;
-        width: 120px;
-        background-color: rgba(255, 255, 255, 0.20);
-        border-radius: 25px;
-        text-align: center;
-        font-size: 28px;
-        color: white;
-        font-family: DM Serif Display;
-    }
+#clockDIV {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 120px;
+    background-color: rgba(255, 255, 255, 0.20);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    font-family: DM Serif Display;
+}
 
-    #navbar {
-        text-align: justify;
-        border: 1px black solid;
-        width: 1257px;
-        height: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 20px;
-        background-color: rgba(51, 51, 51, 0.456);
-        margin-bottom: 10px;
-        color: white;
-        font-family: Habibi;
-        border-radius: 25px;
-    }
+#navbar {
+    text-align: justify;
+    border: 1px black solid;
+    width: 1257px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.456);
+    margin-bottom: 10px;
+    color: white;
+    font-family: Habibi;
+    border-radius: 25px;
+}
 
-    .navbarLINK {
-        width:209px;
-        text-align: center;
-    }
+.navbarLINK {
+    width:209px;
+    text-align: center;
+}
 
 .main-forum-container {
-width: 100%;
-max-width: 900px;
-background: rgba(23, 28, 38, 0.8);
+width: 97%;
+background-color: rgba(51, 51, 51, 0.456);
 backdrop-filter: blur(20px);
 -webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.1);
+border: 1px black solid;
+font-family: DM Serif Display;
 border-radius: 14px;
 padding: 24px;
 box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Témakör fejléce gombokkal */
+.column {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.topics-stack {
+    flex: 1;
+    float: left;
+}
+
+.topics-stack2 {
+    width: 50%;
+}
+
 .topic-list-header {
-display: flex;
-justify-content: space-between;
 align-items: center;
 padding-bottom: 20px;
 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -129,9 +141,7 @@ margin-bottom: 20px;
 }
 
 .header-left {
-display: flex;
 align-items: center;
-gap: 16px;
 }
 
 .btn-back {
@@ -159,7 +169,6 @@ color: #ffffff;
 font-size: 22px;
 font-weight: 700;
 color: #ffffff;
-letter-spacing: 0.2px;
 }
 
 .btn-new-topic {
@@ -183,22 +192,12 @@ border-color: rgba(255, 255, 255, 0.25);
 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.topics-stack {
-display: flex;
-flex-direction: column;
-gap: 14px;
-}
-
 .topic-card {
 background: rgba(255, 255, 255, 0.03);
 border: 1px solid rgba(255, 255, 255, 0.06);
 border-radius: 10px;
 padding: 16px 20px;
-display: flex;
-justify-content: space-between;
 align-items: center;
-cursor: pointer;
-transition: all 0.2s ease;
 text-decoration: none;
 color: inherit;
 }
@@ -210,7 +209,6 @@ transform: translateY(-1px);
 }
 
 .topic-main-info {
-flex: 1;
 padding-right: 24px;
 }
 
@@ -227,16 +225,12 @@ font-size: 13px;
 color: #94a3b8;
 line-height: 1.4;
 margin-bottom: 8px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
 max-width: 580px;
 }
 
 .topic-meta {
 font-size: 11.5px;
 color: #64748b;
-display: flex;
 align-items: center;
 gap: 8px;
 }
@@ -252,16 +246,12 @@ color: #475569;
 }
 
 .topic-stats {
-display: flex;
 align-items: center;
 gap: 18px;
 text-align: right;
-flex-shrink: 0;
 }
 
 .stats-info {
-display: flex;
-flex-direction: column;
 gap: 2px;
 }
 
@@ -328,7 +318,6 @@ transition: transform 0.25s ease;
 transform: translateY(0) scale(1);
 }
 
-/* Fejléc */
 .modal-header {
 display: flex;
 justify-content: space-between;
@@ -359,7 +348,6 @@ transition: color 0.15s ease;
 color: #ffffff;
 }
 
-/* Beviteli mezők */
 .form-group {
 margin-bottom: 16px;
 display: flex;
@@ -394,7 +382,6 @@ border-color: rgba(255, 255, 255, 0.35);
 box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
 }
 
-/* Alsó gombsor */
 .modal-actions {
 display: flex;
 justify-content: flex-end;
@@ -483,4 +470,19 @@ border: none;
 border-radius: 6px;
 cursor: pointer;
 font: inherit;
+}
+
+input[name="save_nickname"] {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    padding: 12px;
+    margin: 16px 0 10px;
+    resize: vertical;
+    font: inherit;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background: #171717;
+    color: #fff;
 }
